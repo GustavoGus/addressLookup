@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Address Lookup</masterLabel>
+    <description>Address lookup component with autocomplete and save functionality</description>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property name="objectApiName" label="Object API Name" type="String" description="The Salesforce object API name (e.g., 'Account')" />
+            <property name="postalCodeApiFieldName" label="Postal Code Field API Name" type="String" description="API name of the Postal Code field (e.g., 'PostalCode')" />
+            <property name="streetApiFieldName" label="Street Field API Name" type="String" description="API name of the Street field (e.g., 'Street')" />
+            <property name="cityApiFieldName" label="City Field API Name" type="String" description="API name of the City field (e.g., 'City')" />
+            <property name="countyApiFieldName" label="County Field API Name" type="String" description="API name of the County field (e.g., 'County')" />
+            <property name="countryApiFieldName" label="Country Field API Name" type="String" description="API name of the Country field (e.g., 'Country')" />
+            <property name="title" label="Card Title" type="String" description="Title to display in the card header" default="Address Lookup" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

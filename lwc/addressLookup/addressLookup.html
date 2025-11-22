@@ -1,0 +1,119 @@
+<template>
+    <article class="slds-card slds-card_boundary slds-card_related-list-fix">
+        <lightning-card icon-name="utility:search" title={title} variant="narrow">
+            <div class="slds-p-around_medium">
+                <p class="slds-text-body_regular slds-m-bottom_small">
+                    Type a query and press Enter to search. Select a suggestion from the list.
+                </p>
+
+                <!-- Search input: fires lookup on Enter -->
+                <div onkeyup={handleKeyUp}>
+                    <lightning-input
+                        name="enter-search"
+                        label="Search"
+                        type="search"
+                        placeholder="Start typing an address and press Enter"
+                        icon-name="utility:search"
+                    ></lightning-input>
+                </div>
+
+                <!-- Loading indicator -->
+                <template if:true={isLoading}>
+                    <div class="slds-spinner_container slds-m-top_medium">
+                        <lightning-spinner size="small"></lightning-spinner>
+                    </div>
+                </template>
+
+                <!-- Suggestions combobox -->
+                <template if:true={suggestionOptions}>
+                    <template if:true={suggestionOptions.length}>
+                        <div class="slds-m-top_medium">
+                            <lightning-combobox
+                                name="addressSuggestions"
+                                label="Suggestions"
+                                value={selectedSuggestionId}
+                                placeholder="Select an address"
+                                options={suggestionOptions}
+                                onchange={handleSelectChange}
+                            ></lightning-combobox>
+                        </div>
+                    </template>
+                </template>
+
+                <!-- Query echo -->
+                <template if:true={queryTerm}>
+                    <p class="slds-text-body_small slds-m-top_small">
+                        Showing suggestions for: "{queryTerm}"
+                    </p>
+                </template>
+
+                <!-- Error message -->
+                <template if:true={errorMessage}>
+                    <div class="slds-notify slds-notify_alert slds-theme_error slds-m-top_small" role="alert">
+                        <span class="slds-assistive-text">Error</span>
+                        <h2>{errorMessage}</h2>
+                    </div>
+                </template>
+
+                <!-- Address detail fields -->
+                <div class="slds-m-top_large slds-grid slds-wrap slds-gutters">
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                        <lightning-input
+                            name="postcode"
+                            label="Postcode"
+                            type="text"
+                            value={addressDetail.postcode}
+                            required
+                        ></lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1">
+                        <lightning-input
+                            name="street"
+                            label="Street"
+                            type="text"
+                            value={addressDetail.street}
+                            required
+                        ></lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                        <lightning-input
+                            name="city"
+                            label="City"
+                            type="text"
+                            value={addressDetail.city}
+                            required
+                        ></lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                        <lightning-input
+                            name="county"
+                            label="County"
+                            type="text"
+                            value={addressDetail.county}
+                        ></lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                        <lightning-input
+                            name="country"
+                            label="Country"
+                            type="text"
+                            value={addressDetail.country}
+                            required
+                        ></lightning-input>
+                    </div>
+                </div>
+                
+                <!-- Save button -->
+                <div class="slds-m-top_medium">
+                    <lightning-button 
+                        label="Save" 
+                        title="Save" 
+                        onclick={handleSave}
+                        variant="brand"
+                    ></lightning-button>
+                </div>
+            </div>
+            <div slot="actions"></div>
+        </lightning-card>
+    </article>
+</template>

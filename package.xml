@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>AddressLookupAura</members>
+        <members>AddressLookupAuraTests</members>
+        <members>AddressLookupService</members>
+        <members>AddressLookupServiceMock</members>
+        <members>AddressLookupServiceTests</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>Api_Keys__mdt</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Account_Record_Page</members>
+        <name>FlexiPage</name>
+    </types>
+    <types>
+        <members>addressLookup</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <types>
+        <members>GET_ADDRESS_IO</members>
+        <name>NamedCredential</name>
+    </types>
+    <version>63.0</version>
+</Package>
