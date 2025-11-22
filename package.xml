@@ -9,6 +9,10 @@
         <name>ApexClass</name>
     </types>
     <types>
+        <members>Api_Keys.GET_ADDRESS_IO</members>
+        <name>CustomMetadata</name>
+    </types>
+    <types>
         <members>Api_Keys__mdt</members>
         <name>CustomObject</name>
     </types>
