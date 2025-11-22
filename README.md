@@ -6,9 +6,9 @@ The source code is provided as a packaged-styled metadata with an ad-hoc package
 You can use Salesforce Workbench to [deploy](https://workbench.developerforce.com/metadataDeploy.php)
 
 ### Deployment Steps
-1. In the [addressLookup repository](https://github.com/GustavoGus/addressLookup) click on Code button and Download ZIP.
-2. Access Salesforce Workbench to [deploy](https://workbench.developerforce.com/metadataDeploy.php) and log with the target org credentials.
-3. Click on Migration menu and then click on Deploy.
+1. In the [addressLookup repository](https://github.com/GustavoGus/addressLookup) click on Code button and then in Download ZIP.
+2. Access the Salesforce Workbench to [deploy](https://workbench.developerforce.com/metadataDeploy.php) and log with the target org credentials.
+3. In the top menu, click on Migration option and then click on Deploy.
 4. Select the downloaded Zip from your local, it will have a name like addressLookup-main.zip
 5. Use the default settings and deploy. (Review before clicking in which org are you logged into)
 
